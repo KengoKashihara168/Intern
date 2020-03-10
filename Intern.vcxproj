@@ -141,13 +141,13 @@
     <ClCompile Include="Janken\JankenMain.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Rand.cpp" />
-    <ClCompile Include="Shiritori\Shiritori.cpp" />
+    <ClCompile Include="Shiritori\SoloShiritoriMain.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Janken\JankenMain.h" />
     <ClInclude Include="Janken\JankenData.h" />
     <ClInclude Include="Rand.h" />
-    <ClInclude Include="Shiritori\Shiritori.h" />
+    <ClInclude Include="Shiritori\SoloShiritoriMain.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
