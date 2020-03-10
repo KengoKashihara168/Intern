@@ -8,7 +8,7 @@ void JankenMain();
 
 /*----------ゲーム関数----------*/
 
-void Initialize();	 // 初期化
-int Update();		 // 更新
-void Render();		 // 描画
-void Finalize();	 // 終了
+void JankenInitialize();	 // 初期化
+int  JankenUpdate();		 // 更新
+void JankenRender();		 // 描画
+void JankenFinalize();		 // 終了

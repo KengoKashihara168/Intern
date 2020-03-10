@@ -6,24 +6,24 @@
 void JankenMain()
 {
 	// 初期化
-	Initialize();
+	JankenInitialize();
 
 	int game = 0; // 0ならゲーム中
 	while (game == 0)
 	{
 		// 更新
-		game = Update();
+		game = JankenUpdate();
 		
 		// 描画
-		Render();
+		JankenRender();
 	}
 
 	// 終了
-	Finalize();
+	JankenFinalize();
 }
 
 // 初期化
-void Initialize()
+void JankenInitialize()
 {
 	printf("グー　：「g」「r」\n");
 	printf("チョキ：「c」「s」\n");
@@ -32,7 +32,7 @@ void Initialize()
 }
 
 // 更新
-int Update()
+int JankenUpdate()
 {
 	// NPCの手を決める
 	npcHand = RandomHand();
@@ -53,7 +53,7 @@ int Update()
 }
 
 // 描画
-void Render()
+void JankenRender()
 {
 	// 結果の表示
 	printf("NPC：%s", GetHandText(npcHand));
@@ -64,7 +64,7 @@ void Render()
 }
 
 // 終了
-void Finalize()
+void JankenFinalize()
 {
 	//system("cls");
 	printf("終了\n");
