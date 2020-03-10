@@ -37,8 +37,8 @@ void Initialize()
 // XV
 bool Update()
 {
-	char input;
-	scanf("%c",&input);
+	char input,feed;
+	scanf("%c%c",&input,&feed);
 
 	// “ü—Í‚³‚ê‚½è‚ğæ“¾
 	playerHand = InputHand(input);
@@ -137,6 +137,7 @@ bool Judge()
 		break;
 	}
 
+	if (result == "‚ ‚¢‚±")return true;
 	return false;
 }
 
