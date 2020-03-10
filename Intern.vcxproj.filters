@@ -36,20 +36,17 @@
     <ClCompile Include="main.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Shiritori\Shiritori.cpp">
-      <Filter>ソース ファイル\Shiritori</Filter>
-    </ClCompile>
     <ClCompile Include="Janken\JankenMain.cpp">
       <Filter>ソース ファイル\Janken</Filter>
     </ClCompile>
     <ClCompile Include="Rand.cpp">
       <Filter>ソース ファイル\Utility</Filter>
     </ClCompile>
+    <ClCompile Include="Shiritori\SoloShiritoriMain.cpp">
+      <Filter>ソース ファイル\Shiritori</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Shiritori\Shiritori.h">
-      <Filter>ヘッダー ファイル\Shiritori</Filter>
-    </ClInclude>
     <ClInclude Include="Janken\JankenData.h">
       <Filter>ヘッダー ファイル\Janken</Filter>
     </ClInclude>
@@ -58,6 +55,9 @@
     </ClInclude>
     <ClInclude Include="Rand.h">
       <Filter>ヘッダー ファイル\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Shiritori\SoloShiritoriMain.h">
+      <Filter>ヘッダー ファイル\Shiritori</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
