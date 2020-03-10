@@ -8,14 +8,13 @@ void JankenMain()
 	// 初期化
 	Initialize();
 
-	bool game = true; // trueならゲーム中
-	while (game)
+	int game = 0; // 0ならゲーム中
+	while (game == 0)
 	{
 		// 更新
 		game = Update();
 		
 		// 描画
-		//system("cls");
 		Render();
 	}
 
@@ -26,8 +25,6 @@ void JankenMain()
 // 初期化
 void Initialize()
 {
-	npcHand = RandomHand();
-
 	printf("グー　：「g」「r」\n");
 	printf("チョキ：「c」「s」\n");
 	printf("パー　：「p」\n");
@@ -35,10 +32,19 @@ void Initialize()
 }
 
 // 更新
-bool Update()
+int Update()
 {
+	// NPCの手を決める
+	npcHand = RandomHand();
+
 	char input,feed;
 	scanf("%c%c",&input,&feed);
+
+	while (CheckInput(input) == 0)
+	{
+		printf("正しい文字を入力してください\n");
+		scanf("%c%c", &input, &feed);
+	}
 
 	// 入力された手を取得
 	playerHand = InputHand(input);
@@ -54,7 +60,7 @@ void Render()
 	printf(" vs ");
 ;
 	printf("あなた：%s\n", GetHandText(playerHand));
-	printf("結果は… %s！\n", result);
+	printf("%s\n", result);
 }
 
 // 終了
@@ -106,61 +112,72 @@ const char* GetHandText(RPS hand)
 	return text;
 }
 
+// 入力された文字をチェック
+int CheckInput(char input)
+{
+	int checkFlag = 0;
+	if (IS_ROCK(input))		checkFlag = 1;
+	if (IS_SCISSORS(input))	checkFlag = 1;
+	if (IS_PAPER(input))	checkFlag = 1;
+
+	return checkFlag;
+}
+
 // 入力された手を取得
 RPS InputHand(char input)
 {
 	RPS hand = RPS_MAX;
-	if (input == 'g' || input == 'r')hand = Rock;
-	if (input == 'c' || input == 's')hand = Scissors;
-	if (input == 'p') hand = Paper;
+	if (IS_ROCK(input))		hand = Rock;
+	if (IS_SCISSORS(input))	hand = Scissors;
+	if (IS_PAPER(input))	hand = Paper;
 
 	return hand;
 }
 
 // 結果判定
-bool Judge()
+int Judge()
 {
-	result = "";
 	switch (playerHand)
 	{
 	case Rock:
 		// グーの判定
-		result = RockJudge();
+		RockJudge();
 		break;
 	case Paper:
 		// パーの判定
-		result = PaperJudge();
+		PaperJudge();
 		break;
 	case Scissors:
 		// チョキの判定
-		result = ScissorsJudge();
+		ScissorsJudge();
 		break;
 	}
 
-	if (result == "あいこ")return true;
-	return false;
+	if (result == DRAW)return 0;
+
+	return 1;
 }
 
 // グーの判定
-const char* RockJudge()
+void RockJudge()
 {
-	if (npcHand == Scissors)return "勝ち";
-	if (npcHand == Paper)return "負け";
-	return "あいこ";
+	result = DRAW;
+	if (npcHand == Scissors)result = WIN;
+	if (npcHand == Paper)result = LOSE;
 }
 
 // パーの判定
-const char* PaperJudge()
+void PaperJudge()
 {
-	if (npcHand == Rock)return "勝ち";
-	if (npcHand == Scissors)return "負け";
-	return "あいこ";
+	result = DRAW;
+	if (npcHand == Rock)result = WIN;
+	if (npcHand == Scissors)result = LOSE;
 }
 
 // チョキの判定
-const char* ScissorsJudge()
+void ScissorsJudge()
 {
-	if (npcHand == Paper)return "勝ち";
-	if (npcHand == Rock)return "負け";
-	return "あいこ";
+	result = DRAW;
+	if (npcHand == Paper)result = WIN;
+	if (npcHand == Rock)result = LOSE;
 }
