@@ -26,10 +26,14 @@ void SoloShiritoriInitialize()
 // 更新
 int SoloShiritoriUpdate()
 {
-	char str[256];
-	if (scanf("%s", &str) < 0)
+	char str[256] = { "" };
+
+	while (CheckWordLength(str))
 	{
-		printf("入力失敗\n");
+		if (scanf("%s", &str) < 0)
+		{
+			printf("入力失敗\n");
+		}
 	}
 
 	// 末尾の文字を取得
@@ -46,6 +50,24 @@ void SoloShiritoriFinalize()
 	printf("終了\n");
 	getchar();
 }
+
+// 文字数のチェック
+int CheckWordLength(char word[])
+{
+	int checkFlag = 0;
+	int length = strlen(word);
+	
+	// 文字数が２より少ない
+	if (length < WORD_LOWER || length > WORD_UPPER)
+	{
+		checkFlag = -1;
+		printf("%d文字以上%d文字以下で入力してください\n",
+				WORD_LOWER / 2, WORD_UPPER / 2);
+	}
+
+	return checkFlag;
+}
+
 
 // 末尾の文字を取得
 void GetTail(char word[])
