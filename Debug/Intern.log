@@ -1,5 +1,4 @@
-﻿  JankenMain.cpp
-  SoloShiritoriMain.cpp
-  main.cpp
-  コードを生成中...
+﻿  SoloShiritoriMain.cpp
+C:\Users\dorasu\source\repos\Intern\Intern\Shiritori\SoloShiritoriMain.cpp(45,1): warning C4996: 'wscanf': This function or variable may be unsafe. Consider using wscanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_wstdio.h(930): message : 'wscanf' の宣言を確認してください
   Intern.vcxproj -> C:\Users\dorasu\source\repos\Intern\Debug\Intern.exe

@@ -59,5 +59,8 @@
     <ClInclude Include="Shiritori\SoloShiritoriMain.h">
       <Filter>ヘッダー ファイル\Shiritori</Filter>
     </ClInclude>
+    <ClInclude Include="Shiritori\SoloShiritori.h">
+      <Filter>ヘッダー ファイル\Shiritori</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,4 +1,5 @@
 #include"SoloShiritoriMain.h"
+#include"SoloShiritori.h"
 
 void SoloShiritoriMain()
 {
@@ -22,13 +23,28 @@ void SoloShiritoriMain()
 // 初期化
 void SoloShiritoriInitialize()
 {
-	printf("Initialize\n");
+	setlocale(LC_CTYPE, "ja_JP.UTF-8");
+	//wprintf(L"しりとり->\n");
 }
 
 // 更新
 int SoloShiritoriUpdate()
 {
-	printf("Update\n");
+	// マルチバイト文字の入出力
+	//char a[256];
+	//scanf("%s", &a);
+	//printf("%s", &a);
+
+	// ワイド文字
+	wchar_t wa[] = L"あいう";
+	wprintf(L"%ls\n", &wa);
+	wprintf(L"%lc\n", wa[0]);
+
+	// ワイド文字の入出力
+	wchar_t wb[256];
+	wscanf(L"%ls", &wb);
+	wprintf(L"%ls\n", &wb);
+	wprintf(L"%lc\n", wb[0]);
 
 	return 1;
 }
@@ -36,7 +52,7 @@ int SoloShiritoriUpdate()
 // 描画
 void SoloShiritoriRender()
 {
-	printf("Render\n");
+	
 }
 
 // 終了
