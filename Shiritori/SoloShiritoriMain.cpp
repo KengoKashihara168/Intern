@@ -20,13 +20,16 @@ void SoloShiritoriMain()
 // 初期化
 void SoloShiritoriInitialize()
 {
-	//wprintf(L"しりとり->\n");
+	printf("しりとり->\n");
+	char start[] = "しりとり";
+	GetTail(start,&g_tail[0]);
+	printf("%s\n", &g_tail);
 }
 
 // 更新
 int SoloShiritoriUpdate()
 {
-	char str[256] = { "" };
+	char str[256];
 
 	while (CheckWordLength(str))
 	{
@@ -37,8 +40,18 @@ int SoloShiritoriUpdate()
 	}
 
 	// 末尾の文字を取得
-	GetTail(str);
+	char tail[EM_SIZE];
+	GetTail(str,&tail[0]);
 	printf("%sの最後の文字は「%s」\n", &str, &tail);
+
+	if (IsSame(tail) < 0)
+	{
+		printf("一致しませんでした\n");
+	}
+	else
+	{
+		printf("一致しました\n");
+	}
 
 	return 1;
 
@@ -68,9 +81,25 @@ int CheckWordLength(char word[])
 	return checkFlag;
 }
 
+// 現在の末尾文字と一致しているかチェック
+int IsSame(char tail[])
+{
+	int isSame = 0;
+	
+	for (int i = 0; i < EM_SIZE; i++)
+	{
+		if (tail[i] != g_tail[i])
+		{
+			isSame = -1;
+		}
+	}
+
+	return isSame;
+}
+
 
 // 末尾の文字を取得
-void GetTail(char word[])
+void GetTail(char word[],char* tail)
 {
 	// 末尾の文字の開始位置を計算
 	int length = strlen(word);
@@ -80,6 +109,7 @@ void GetTail(char word[])
 	for (int i = 0; i < EM_SIZE; i++)
 	{
 		int j = tailNum + i;
-		tail[i] = word[j];
+		*tail = word[j];
+		tail++;
 	}
 }
