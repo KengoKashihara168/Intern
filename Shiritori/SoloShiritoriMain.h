@@ -8,5 +8,4 @@ void SoloShiritoriMain();
 
 void SoloShiritoriInitialize();	 // ‰Šú‰»
 int  SoloShiritoriUpdate();		 // XV
-void SoloShiritoriRender();		 // •`‰æ
 void SoloShiritoriFinalize();	 // I—¹

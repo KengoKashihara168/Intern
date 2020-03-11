@@ -11,9 +11,6 @@ void SoloShiritoriMain()
 	{
 		// 更新
 		game = SoloShiritoriUpdate();
-
-		// 描画
-		SoloShiritoriRender();
 	}
 
 	// 終了
@@ -23,36 +20,24 @@ void SoloShiritoriMain()
 // 初期化
 void SoloShiritoriInitialize()
 {
-	setlocale(LC_CTYPE, "ja_JP.UTF-8");
 	//wprintf(L"しりとり->\n");
 }
 
 // 更新
 int SoloShiritoriUpdate()
 {
-	// マルチバイト文字の入出力
-	//char a[256];
-	//scanf("%s", &a);
-	//printf("%s", &a);
+	char str[256];
+	if (scanf("%s", &str) < 0)
+	{
+		printf("入力失敗\n");
+	}
 
-	// ワイド文字
-	wchar_t wa[] = L"あいう";
-	wprintf(L"%ls\n", &wa);
-	wprintf(L"%lc\n", wa[0]);
-
-	// ワイド文字の入出力
-	wchar_t wb[256];
-	wscanf(L"%ls", &wb);
-	wprintf(L"%ls\n", &wb);
-	wprintf(L"%lc\n", wb[0]);
+	// 末尾の文字を取得
+	GetTail(str);
+	printf("%sの最後の文字は「%s」\n", &str, &tail);
 
 	return 1;
-}
 
-// 描画
-void SoloShiritoriRender()
-{
-	
 }
 
 // 終了
@@ -60,4 +45,19 @@ void SoloShiritoriFinalize()
 {
 	printf("終了\n");
 	getchar();
+}
+
+// 末尾の文字を取得
+void GetTail(char word[])
+{
+	// 末尾の文字の開始位置を計算
+	int length = strlen(word);
+	int tailNum = length - 2;
+
+	// 最後の１文字をtailに格納
+	for (int i = 0; i < EM_SIZE; i++)
+	{
+		int j = tailNum + i;
+		tail[i] = word[j];
+	}
 }
