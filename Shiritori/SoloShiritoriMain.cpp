@@ -39,12 +39,12 @@ int SoloShiritoriUpdate()
 		}
 	}
 
-	// 末尾の文字を取得
-	char tail[EM_SIZE];
-	GetTail(str,&tail[0]);
-	printf("%sの最後の文字は「%s」\n", &str, &tail);
+	// 先頭の文字を取得
+	char head[EM_SIZE];
+	GetHead(str, head);
+	printf("%sの最初の文字は「%s」\n", &str, &head);
 
-	if (IsSame(tail) < 0)
+	if (IsSame(head) < 0)
 	{
 		printf("一致しませんでした\n");
 	}
@@ -52,6 +52,11 @@ int SoloShiritoriUpdate()
 	{
 		printf("一致しました\n");
 	}
+
+	// 末尾の文字を取得
+	char tail[EM_SIZE];
+	GetTail(str, &tail[0]);
+	printf("%sの最後の文字は「%s」\n", &str, &tail);
 
 	return 1;
 
@@ -97,7 +102,6 @@ int IsSame(char tail[])
 	return isSame;
 }
 
-
 // 末尾の文字を取得
 void GetTail(char word[],char* tail)
 {
@@ -112,4 +116,15 @@ void GetTail(char word[],char* tail)
 		*tail = word[j];
 		tail++;
 	}
+}
+
+// 先頭の文字を取得
+void GetHead(char word[], char *head)
+{
+	for (int i = 0; i < 2; i++)
+	{
+		*head = word[i];
+		head++;
+	}
+	*head = '\0';
 }

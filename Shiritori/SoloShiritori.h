@@ -17,6 +17,8 @@ int IsSame(char tail[]);
 
 // ––”ö‚Ì•¶š‚ğæ“¾
 void GetTail(char word[],char* tail);
+// æ“ª‚Ì•¶š‚ğæ“¾
+void GetHead(char word[], char* head);
 
 
 /*----------•Ï”----------*/
