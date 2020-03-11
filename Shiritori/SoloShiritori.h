@@ -20,6 +20,8 @@ void GetTail(char word[],char* tail);
 // æ“ª‚Ì•¶š‚ğæ“¾
 void GetHead(char word[], char* head);
 
+// ––”ö•¶š‚É“o˜^‚·‚é
+void SetTail(char tail[]);
 
 /*----------•Ï”----------*/
 

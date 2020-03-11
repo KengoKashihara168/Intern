@@ -42,23 +42,22 @@ int SoloShiritoriUpdate()
 	// æ“ª‚Ì•¶š‚ğæ“¾
 	char head[EM_SIZE];
 	GetHead(str, head);
-	printf("%s‚ÌÅ‰‚Ì•¶š‚Íu%sv\n", &str, &head);
 
 	if (IsSame(head) < 0)
 	{
 		printf("ˆê’v‚µ‚Ü‚¹‚ñ‚Å‚µ‚½\n");
+		return 1;
 	}
 	else
 	{
-		printf("ˆê’v‚µ‚Ü‚µ‚½\n");
+		// ––”ö‚Ì•¶š‚ğæ“¾
+		char tail[EM_SIZE];
+		GetTail(str, &tail[0]);
+		printf("%s->\n", &str);
+		SetTail(tail);
 	}
 
-	// ––”ö‚Ì•¶š‚ğæ“¾
-	char tail[EM_SIZE];
-	GetTail(str, &tail[0]);
-	printf("%s‚ÌÅŒã‚Ì•¶š‚Íu%sv\n", &str, &tail);
-
-	return 1;
+	return 0;
 
 }
 
@@ -110,21 +109,31 @@ void GetTail(char word[],char* tail)
 	int tailNum = length - 2;
 
 	// ÅŒã‚Ì‚P•¶š‚ğtail‚ÉŠi”[
-	for (int i = 0; i < EM_SIZE; i++)
+	for (int i = 0; i < EM_SIZE - 1; i++)
 	{
 		int j = tailNum + i;
 		*tail = word[j];
 		tail++;
 	}
+	*tail = '\0';
 }
 
 // æ“ª‚Ì•¶š‚ğæ“¾
 void GetHead(char word[], char *head)
 {
-	for (int i = 0; i < 2; i++)
+	for (int i = 0; i < EM_SIZE - 1; i++)
 	{
 		*head = word[i];
 		head++;
 	}
 	*head = '\0';
+}
+
+// ––”ö•¶š‚É“o˜^
+void SetTail(char tail[])
+{
+	for (int i = 0; i < EM_SIZE; i++)
+	{
+		g_tail[i] = tail[i];
+	}
 }
