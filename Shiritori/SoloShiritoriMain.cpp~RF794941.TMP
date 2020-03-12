@@ -27,7 +27,7 @@ void SoloShiritoriInitialize()
 }
 
 // 更新
-int SoloShiritoriUpdate()
+BOOL SoloShiritoriUpdate()
 {
 	BOOL playFlag = TRUE;
 	char str[256];
@@ -43,6 +43,7 @@ int SoloShiritoriUpdate()
 	}
 
 	// 先頭の文字を取得
+	
 	GetHead(str, head);
 
 	if (IsSame(g_tail,head) < 0)
@@ -94,7 +95,7 @@ int CheckWordLength(char word[])
 }
 
 // 現在の末尾文字と一致しているかチェック
-int IsSame(char a[],char b[])
+BOOL IsSame(char a[],char b[])
 {
 	BOOL isSame = TRUE;
 	
