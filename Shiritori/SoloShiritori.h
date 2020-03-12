@@ -3,6 +3,7 @@
 #include<stdlib.h>
 #include<locale.h>
 #include<string.h>
+#include"../Utility.h"
 
 #define EM_SIZE 3
 #define WORD_LOWER 4
@@ -13,7 +14,7 @@
 // 文字数のチェック
 int CheckWordLength(char word[]);
 // 現在の末尾文字と一致しているかチェック
-int IsSame(char tail[]);
+int IsSame(char a[],char b[]);
 
 // 末尾の文字を取得
 void GetTail(char word[],char* tail);
@@ -26,3 +27,4 @@ void SetTail(char tail[]);
 /*----------変数----------*/
 
 char g_tail[EM_SIZE];
+char END_CHAR[EM_SIZE] = "ん";

@@ -20,8 +20,8 @@ void SoloShiritoriMain()
 // ‰Šú‰»
 void SoloShiritoriInitialize()
 {
-	printf("‚µ‚è‚Æ‚è->\n");
 	char start[] = "‚µ‚è‚Æ‚è";
+	printf("%s->\n",&start);
 	GetTail(start,&g_tail[0]);
 	printf("%s\n", &g_tail);
 }
@@ -30,6 +30,8 @@ void SoloShiritoriInitialize()
 int SoloShiritoriUpdate()
 {
 	char str[256];
+	char head[EM_SIZE];
+	char tail[EM_SIZE];
 
 	while (CheckWordLength(str))
 	{
@@ -40,10 +42,10 @@ int SoloShiritoriUpdate()
 	}
 
 	// æ“ª‚Ì•¶š‚ğæ“¾
-	char head[EM_SIZE];
+	
 	GetHead(str, head);
 
-	if (IsSame(head) < 0)
+	if (IsSame(g_tail,head) < 0)
 	{
 		printf("ˆê’v‚µ‚Ü‚¹‚ñ‚Å‚µ‚½\n");
 		return 1;
@@ -51,9 +53,15 @@ int SoloShiritoriUpdate()
 	else
 	{
 		// ––”ö‚Ì•¶š‚ğæ“¾
-		char tail[EM_SIZE];
 		GetTail(str, &tail[0]);
 		printf("%s->\n", &str);
+
+		if (IsSame(tail,END_CHAR) >= 0)
+		{
+			printf("u‚ñv‚ª‚Â‚¢‚½\n");
+			return 1;
+		}
+
 		SetTail(tail);
 	}
 
@@ -86,16 +94,13 @@ int CheckWordLength(char word[])
 }
 
 // Œ»İ‚Ì––”ö•¶š‚Æˆê’v‚µ‚Ä‚¢‚é‚©ƒ`ƒFƒbƒN
-int IsSame(char tail[])
+int IsSame(char a[],char b[])
 {
 	int isSame = 0;
 	
-	for (int i = 0; i < EM_SIZE; i++)
+	if (strcmp(a, b) != 0)
 	{
-		if (tail[i] != g_tail[i])
-		{
-			isSame = -1;
-		}
+		isSame = -1;
 	}
 
 	return isSame;
@@ -107,11 +112,12 @@ void GetTail(char word[],char* tail)
 	// ––”ö‚Ì•¶š‚ÌŠJnˆÊ’u‚ğŒvZ
 	int length = strlen(word);
 	int tailNum = length - 2;
+	int i, j;
 
 	// ÅŒã‚Ì‚P•¶š‚ğtail‚ÉŠi”[
-	for (int i = 0; i < EM_SIZE - 1; i++)
+	for (i = 0; i < EM_SIZE - 1; i++)
 	{
-		int j = tailNum + i;
+		j = tailNum + i;
 		*tail = word[j];
 		tail++;
 	}
@@ -121,7 +127,8 @@ void GetTail(char word[],char* tail)
 // æ“ª‚Ì•¶š‚ğæ“¾
 void GetHead(char word[], char *head)
 {
-	for (int i = 0; i < EM_SIZE - 1; i++)
+	int i;
+	for (i = 0; i < EM_SIZE - 1; i++)
 	{
 		*head = word[i];
 		head++;
@@ -132,7 +139,8 @@ void GetHead(char word[], char *head)
 // ––”ö•¶š‚É“o˜^
 void SetTail(char tail[])
 {
-	for (int i = 0; i < EM_SIZE; i++)
+	int i;
+	for (i = 0; i < EM_SIZE; i++)
 	{
 		g_tail[i] = tail[i];
 	}
