@@ -2,11 +2,8 @@
 
 void LeetQuizMain()
 {
-	const int row = 26;
-	const int column = 3;
-	const int wordNum = 3;
-	const char alphabet[row + 1] = {'A','B','C','D','E','F','G','H', 'I','J','K','L', 'M','N','O','P', 'Q','R','S','T', 'U','V','W','X', 'Y','Z','\0'};
-	const char leet[row][column] = 
+	const char alphabet[ROW + 1] = {'A','B','C','D','E','F','G','H', 'I','J','K','L', 'M','N','O','P', 'Q','R','S','T', 'U','V','W','X', 'Y','Z','\0'};
+	const char leet[ROW][COLUMN] = 
 	{ 
 		 {'/','\\','\0'} // A
 		,{'I','3','\0'}  // B
@@ -35,50 +32,62 @@ void LeetQuizMain()
 		,{'\\',' ','\0'} // Y
 		,{'7','_','\0'}  // Z
 	};
-	int num[wordNum];
-	char input[wordNum + 1];
+	int num[WORD_NUM];
+	char input[WORD_NUM];
+	char* p_input = input;
+	char answer[WORD_NUM + 1];
 	int i;
-	char answer[wordNum + 1];
-
-	// Leet文字の表示
-	for (i = 0; i < row; i++)
-	{
-		printf("%c：%s\n", alphabet[i],&leet[i]);
-	}
-
 	// ランダムで表示する文字を設定
-	for (i = 0; i < 3; i++)
+	for (i = 0; i < WORD_NUM; i++)
 	{
-		num[i] = GetRand(row);
-		printf("%d,", num[i]);
+		num[i] = GetRand(ROW);
 	}
-	printf("\n\n");
 
 	// Leet文字の表示
-	for (i = 0; i < 3; i++)
+	WriteQuestion(leet, num);
+
+	// 入力
+	p_input = PlayerInput();
+
+	// 答えの表示
+	for (i = 0; i < WORD_NUM; i++)
+	{
+		answer[i] = alphabet[num[i]];
+	}
+	answer[WORD_NUM] = '\0';
+	printf("%s\n", &answer);
+
+	// 判定
+	Judge(answer, p_input);
+}
+
+// 問題の表示
+void WriteQuestion(const char (*leet)[COLUMN], int num[WORD_NUM])
+{
+	int i;
+	for (i = 0; i < WORD_NUM; i++)
 	{
 		printf("%s ", leet[num[i]]);
 	}
 	printf("\n");
+}
 
-	// 答えの表示
-	for (i = 0; i < wordNum; i++)
-	{
-		answer[i] = alphabet[num[i]];
-	}
-	answer[wordNum] = '\0';
-	printf("%s\n", &answer);
-
-	// 入力
-	if (scanf("%s", &input) < 0)
+// プレイヤーの入力
+char* PlayerInput()
+{
+	static char input[WORD_NUM];
+	if (scanf("%s", input) < 0)
 	{
 		printf("入力失敗\n");
 	}
-	input[wordNum] = '\0';
-	printf("%s\n", &input);
 
-	// 判定
-	if (strcmp(answer,input) == TRUE)
+	return input;
+}
+
+// 正誤判定
+void Judge(char* answer, char* input)
+{
+	if (strcmp(answer, input) == TRUE)
 	{
 		printf("正解\n");
 	}
@@ -86,5 +95,4 @@ void LeetQuizMain()
 	{
 		printf("不正解\n");
 	}
-
 }
