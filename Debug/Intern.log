@@ -1,4 +1,6 @@
-﻿  SoloShiritoriMain.cpp
-C:\Users\dorasu\source\repos\Intern\Intern\Shiritori\SoloShiritoriMain.cpp(39,1): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
+﻿  LeetQuizMain.cpp
+C:\Users\dorasu\source\repos\Intern\Intern\LeetQuiz\LeetQuizMain.cpp(79,1): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h(1274): message : 'scanf' の宣言を確認してください
+  main.cpp
+  コードを生成中...
   Intern.vcxproj -> C:\Users\dorasu\source\repos\Intern\Debug\Intern.exe

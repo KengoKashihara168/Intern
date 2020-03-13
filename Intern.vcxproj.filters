@@ -31,6 +31,12 @@
     <Filter Include="ヘッダー ファイル\Utility">
       <UniqueIdentifier>{e34271c5-b686-4af8-ba7c-df0f0afddbc6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\LeetQuiz">
+      <UniqueIdentifier>{08855c5f-06c7-4111-8c47-2c4924e8f8ee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\LeetQuiz">
+      <UniqueIdentifier>{e09aa219-a30b-4598-a5e6-14f886591629}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -44,6 +50,9 @@
     </ClCompile>
     <ClCompile Include="Shiritori\SoloShiritoriMain.cpp">
       <Filter>ソース ファイル\Shiritori</Filter>
+    </ClCompile>
+    <ClCompile Include="LeetQuiz\LeetQuizMain.cpp">
+      <Filter>ソース ファイル\LeetQuiz</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -64,6 +73,12 @@
     </ClInclude>
     <ClInclude Include="Utility.h">
       <Filter>ヘッダー ファイル\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetQuiz\LeetQuizMain.h">
+      <Filter>ヘッダー ファイル\LeetQuiz</Filter>
+    </ClInclude>
+    <ClInclude Include="LeetQuiz\LeetQuiz.h">
+      <Filter>ヘッダー ファイル\LeetQuiz</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

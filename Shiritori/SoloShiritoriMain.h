@@ -1,5 +1,5 @@
 #pragma once
-#include<stdio.h>
+#include"../Utility.h"
 
 ////////////////// ˆêl‚µ‚è‚Æ‚è //////////////////
 void SoloShiritoriMain();
