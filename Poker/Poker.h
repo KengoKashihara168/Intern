@@ -1,6 +1,4 @@
 #pragma once
-#include"../Utility.h"
-#include"../Rand.h"
 
 ////////////////// ポーカー //////////////////
 

@@ -37,6 +37,12 @@
     <Filter Include="ヘッダー ファイル\LeetQuiz">
       <UniqueIdentifier>{e09aa219-a30b-4598-a5e6-14f886591629}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Poker">
+      <UniqueIdentifier>{755ac178-0f2f-485d-a664-e4738fd6103d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Poker">
+      <UniqueIdentifier>{275bca14-afb0-4650-85d5-6e729b16d657}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -53,6 +59,12 @@
     </ClCompile>
     <ClCompile Include="LeetQuiz\LeetQuizMain.cpp">
       <Filter>ソース ファイル\LeetQuiz</Filter>
+    </ClCompile>
+    <ClCompile Include="Trump.cpp">
+      <Filter>ソース ファイル\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Poker\Poker.cpp">
+      <Filter>ソース ファイル\Poker</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -79,6 +91,12 @@
     </ClInclude>
     <ClInclude Include="LeetQuiz\LeetQuiz.h">
       <Filter>ヘッダー ファイル\LeetQuiz</Filter>
+    </ClInclude>
+    <ClInclude Include="Trump.h">
+      <Filter>ヘッダー ファイル\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Poker\Poker.h">
+      <Filter>ヘッダー ファイル\Poker</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
