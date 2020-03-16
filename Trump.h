@@ -2,10 +2,10 @@
 #include"Utility.h"
 
 #define CARD_MAX 52			// カードの枚数
-#define SPADE   "Spade"		// スペード
-#define CLUB    "Club"		// クラブ
-#define DIAMOND "Diamond"	// ダイヤ
-#define HEART   "Heart"		// ハート
+#define SPADE   "スペード"
+#define CLUB    "クラブ"
+#define DIAMOND "ダイヤ"
+#define HEART   "ハート"
 
 struct Trump
 {

@@ -1,4 +1,2 @@
 ﻿  Poker.cpp
-Rand.obj : warning LNK4099: PDB 'vc142.pdb' が 'Rand.obj' で、または 'C:\Users\dorasu\source\repos\Intern\Debug\vc142.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
-JankenMain.obj : warning LNK4099: PDB 'vc142.pdb' が 'JankenMain.obj' で、または 'C:\Users\dorasu\source\repos\Intern\Debug\vc142.pdb' に見つかりません。デバッグ情報がないものとして、オブジェクトにリンクします。
   Intern.vcxproj -> C:\Users\dorasu\source\repos\Intern\Debug\Intern.exe
