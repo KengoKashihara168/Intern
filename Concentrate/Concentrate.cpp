@@ -7,12 +7,15 @@
 int ConvertInt(char c);
 // 入力されたマスを取得
 Index InputIndex();
+// TRUEのフラグを数える
+int CountTrueFlag(BOOL flag[SUIT_MAX][NUMBER_MAX]);
 
 void ConcentrateMain()
 {
 	Trump trump[SUIT_MAX][NUMBER_MAX];
-	BOOL getFlag[SUIT_MAX][NUMBER_MAX] = { FALSE };
+	BOOL getFlag[SUIT_MAX][NUMBER_MAX];
 	Index first, second;
+	int flagCount = 0;
 	int i, j;
 
 	// トランプの取得
@@ -24,13 +27,41 @@ void ConcentrateMain()
 		}
 	}
 
-	// 入力1
-	first = InputIndex();
-	WriteCard(trump[first.row][first.column]);
+	// フラグの初期化
+	for (i = 0; i < SUIT_MAX; i++)
+	{
+		for (j = 0; j < NUMBER_MAX; j++)
+		{
+			getFlag[i][j] = FALSE;
+		}
+	}
 
-	// 入力２
-	second = InputIndex();
-	WriteCard(trump[second.row][second.column]);
+	while (flagCount < CARD_MAX)
+	{
+		// 入力1
+		printf("１回目の入力：");
+		first = InputIndex();
+		WriteCard(trump[first.row][first.column]);
+		// 入力２
+		printf("２回目の入力：");
+		second = InputIndex();
+		WriteCard(trump[second.row][second.column]);
+
+		// 一致判定
+		if (trump[first.row][first.column].number == trump[second.row][second.column].number)
+		{
+			getFlag[first.row][first.column]   = TRUE;
+			getFlag[second.row][second.column] = TRUE;
+			printf("一致しました\n");
+		}
+		else
+		{
+			printf("一致しませんでした\n");
+		}
+
+		// 獲得数の計算
+		flagCount = CountTrueFlag(getFlag);
+	}
 }
 
 // 文字を数字に変換
@@ -54,7 +85,10 @@ int ConvertInt(char c)
 	else
 	{
 		p = strchr(number, c);
-		convert = p - number;
+		if (p != NULL)
+		{
+			convert = p - number;
+		}
 	}
 
 	return convert;
@@ -72,4 +106,24 @@ Index InputIndex()
 	index.row = ConvertInt(input[1]);
 	
 	return index;
+}
+
+// TRUEのフラグを数える
+int CountTrueFlag(BOOL flag[SUIT_MAX][NUMBER_MAX])
+{
+	int count = 0;
+	int i, j;
+
+	for (i = 0; i < SUIT_MAX; i++)
+	{
+		for (j = 0; j < NUMBER_MAX; j++)
+		{
+			if (flag[i][j] == TRUE)
+			{
+				count++;
+			}
+		}
+	}
+
+	return count;
 }
