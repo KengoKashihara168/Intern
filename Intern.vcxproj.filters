@@ -43,6 +43,12 @@
     <Filter Include="ヘッダー ファイル\Poker">
       <UniqueIdentifier>{275bca14-afb0-4650-85d5-6e729b16d657}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Concentrate">
+      <UniqueIdentifier>{c4075049-709b-482c-95e7-d35985e9ba49}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Concentrate">
+      <UniqueIdentifier>{d7db41f4-f186-4d17-8578-4cce9e2db3be}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -65,6 +71,9 @@
     </ClCompile>
     <ClCompile Include="Poker\Poker.cpp">
       <Filter>ソース ファイル\Poker</Filter>
+    </ClCompile>
+    <ClCompile Include="Concentrate\Concentrate.cpp">
+      <Filter>ソース ファイル\Concentrate</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -97,6 +106,9 @@
     </ClInclude>
     <ClInclude Include="Poker\Poker.h">
       <Filter>ヘッダー ファイル\Poker</Filter>
+    </ClInclude>
+    <ClInclude Include="Concentrate\Concentrate.h">
+      <Filter>ヘッダー ファイル\Concentrate</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

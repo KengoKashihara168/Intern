@@ -4,13 +4,15 @@
 #include"Shiritori/SoloShiritoriMain.h"
 #include"LeetQuiz/LeetQuizMain.h"
 #include"Poker/Poker.h"
+#include"Concentrate/Concentrate.h"
 
 int main()
 {
 	//JankenMain();
 	//SoloShiritoriMain();
 	//LeetQuizMain();
-	PokerMain();
+	//PokerMain();
+	ConcentrateMain();
 
 	return 0;
 }
