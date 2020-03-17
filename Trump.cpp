@@ -79,3 +79,9 @@ int GetNumber(int num)
 	int number = num % NUMBER_MAX + 1;
 	return number;
 }
+
+// カードを表示
+void WriteCard(Trump card)
+{
+	printf("%sの%d\n", card.suit, card.number);
+}

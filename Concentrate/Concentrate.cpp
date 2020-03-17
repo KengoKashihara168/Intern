@@ -27,13 +27,13 @@ void ConcentrateMain()
 	scanf("%s", input);
 	row = ConvertInt(input[0]);
 	column = ConvertInt(input[1]);
-	printf("%s‚Ì%d\n", trump[row][column].suit, trump[row][column].number);
+	WriteCard(trump[row][column]);
 
 	// “ü—Í‚Q
 	scanf("%s", input);
 	row = ConvertInt(input[0]);
 	column = ConvertInt(input[1]);
-	printf("%s‚Ì%d\n", trump[row][column].suit, trump[row][column].number);
+	WriteCard(trump[row][column]);
 }
 
 // •¶š‚ğ”š‚É•ÏŠ·

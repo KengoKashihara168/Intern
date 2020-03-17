@@ -18,3 +18,5 @@ typedef struct Trump Trump;
 
 // ランダムでトランプを取得
 Trump GetTrump();
+// カードを表示
+void WriteCard(Trump card);
