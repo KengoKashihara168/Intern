@@ -3,7 +3,4 @@ C:\Users\dorasu\source\repos\Intern\Intern\Concentrate\Concentrate.cpp(27,1): wa
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h(1274): message : 'scanf' の宣言を確認してください
 C:\Users\dorasu\source\repos\Intern\Intern\Concentrate\Concentrate.cpp(33,1): warning C4996: 'scanf': This function or variable may be unsafe. Consider using scanf_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
 C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\stdio.h(1274): message : 'scanf' の宣言を確認してください
-  Poker.cpp
-  Trump.cpp
-  コードを生成中...
   Intern.vcxproj -> C:\Users\dorasu\source\repos\Intern\Debug\Intern.exe

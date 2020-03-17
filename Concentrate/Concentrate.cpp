@@ -25,14 +25,14 @@ void ConcentrateMain()
 
 	// “ü—Í1
 	scanf("%s", input);
-	row = ConvertInt(input[0]);
-	column = ConvertInt(input[1]);
+	column = ConvertInt(input[0]);
+	row = ConvertInt(input[1]);
 	WriteCard(trump[row][column]);
 
 	// “ü—Í‚Q
 	scanf("%s", input);
-	row = ConvertInt(input[0]);
-	column = ConvertInt(input[1]);
+	column = ConvertInt(input[0]);
+	row = ConvertInt(input[1]);
 	WriteCard(trump[row][column]);
 }
 
