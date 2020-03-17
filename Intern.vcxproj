@@ -141,17 +141,21 @@
     <ClCompile Include="Janken\JankenMain.cpp" />
     <ClCompile Include="LeetQuiz\LeetQuizMain.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Poker\Poker.cpp" />
     <ClCompile Include="Rand.cpp" />
     <ClCompile Include="Shiritori\SoloShiritoriMain.cpp" />
+    <ClCompile Include="Trump.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Janken\JankenMain.h" />
     <ClInclude Include="Janken\JankenData.h" />
     <ClInclude Include="LeetQuiz\LeetQuiz.h" />
     <ClInclude Include="LeetQuiz\LeetQuizMain.h" />
+    <ClInclude Include="Poker\Poker.h" />
     <ClInclude Include="Rand.h" />
     <ClInclude Include="Shiritori\SoloShiritori.h" />
     <ClInclude Include="Shiritori\SoloShiritoriMain.h" />
+    <ClInclude Include="Trump.h" />
     <ClInclude Include="Utility.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

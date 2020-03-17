@@ -3,13 +3,14 @@
 #include"Janken/JankenMain.h"
 #include"Shiritori/SoloShiritoriMain.h"
 #include"LeetQuiz/LeetQuizMain.h"
-
+#include"Poker/Poker.h"
 
 int main()
 {
 	//JankenMain();
 	//SoloShiritoriMain();
-	LeetQuizMain();
+	//LeetQuizMain();
+	PokerMain();
 
 	return 0;
 }
