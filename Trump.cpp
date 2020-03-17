@@ -51,7 +51,7 @@ const char* GetSuit(int num)
 {
 	//  0～12:スペード 13～25:クラブ
 	// 26～38:ダイヤ   39～51:ハート
-	int suitNum = num / 13;
+	int suitNum = num / NUMBER_MAX;
 	const char* suit = "";
 
 	switch (suitNum)
@@ -76,6 +76,6 @@ const char* GetSuit(int num)
 // カード番号をもとに数字を取得
 int GetNumber(int num)
 {
-	int number = num % 13 + 1;
+	int number = num % NUMBER_MAX + 1;
 	return number;
 }
