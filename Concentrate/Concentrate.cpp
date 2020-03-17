@@ -6,7 +6,7 @@
 // 文字を数字に変換
 int ConvertInt(char c);
 // 入力されたマスを取得
-Index InputIndex();
+Index InputIndex(BOOL flag[SUIT_MAX][NUMBER_MAX]);
 // TRUEのフラグを数える
 int CountTrueFlag(BOOL flag[SUIT_MAX][NUMBER_MAX]);
 
@@ -40,11 +40,11 @@ void ConcentrateMain()
 	{
 		// 入力1
 		printf("１回目の入力：");
-		first = InputIndex();
+		first = InputIndex(getFlag);
 		WriteCard(trump[first.row][first.column]);
 		// 入力２
 		printf("２回目の入力：");
-		second = InputIndex();
+		second = InputIndex(getFlag);
 		WriteCard(trump[second.row][second.column]);
 
 		// 一致判定
@@ -95,16 +95,28 @@ int ConvertInt(char c)
 }
 
 // 入力されたマスを取得
-Index InputIndex()
+Index InputIndex(BOOL flag[SUIT_MAX][NUMBER_MAX])
 {
 	Index index;
 	char input[3];
-
-	// 入力を変換
-	scanf("%s", input);
-	index.column = ConvertInt(input[0]);
-	index.row = ConvertInt(input[1]);
+	BOOL retry = FALSE;
 	
+	while (retry != TRUE)
+	{
+		// 入力を変換
+		scanf("%s", input);
+		index.column = ConvertInt(input[0]);
+		index.row = ConvertInt(input[1]);
+
+		if (flag[index.row][index.column] == FALSE)
+		{
+			retry = TRUE;
+		}
+		else
+		{
+			printf("すでに獲得済みです\nもう一度入力してください\n");
+		}
+	}
 	return index;
 }
 
