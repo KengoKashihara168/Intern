@@ -13,7 +13,6 @@ enum Role
 	FullHouse,
 	FourCard,
 	StraightFlush,
-	RoyalStraightFlush,
 	RoleMax
 };
 typedef enum Role Role;
