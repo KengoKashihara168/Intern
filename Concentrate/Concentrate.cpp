@@ -5,12 +5,14 @@
 
 // 文字を数字に変換
 int ConvertInt(char c);
+// 入力されたマスを取得
+Index InputIndex();
 
 void ConcentrateMain()
 {
 	Trump trump[SUIT_MAX][NUMBER_MAX];
-	char input[256];
-	int row, column;
+	BOOL getFlag[SUIT_MAX][NUMBER_MAX] = { FALSE };
+	Index first, second;
 	int i, j;
 
 	// トランプの取得
@@ -19,21 +21,16 @@ void ConcentrateMain()
 		for (j = 0; j < NUMBER_MAX; j++)
 		{
 			trump[i][j] = GetTrump();
-			//printf("%sの%d\n", trump[i][j].suit, trump[i][j].number);
 		}
 	}
 
 	// 入力1
-	scanf("%s", input);
-	column = ConvertInt(input[0]);
-	row = ConvertInt(input[1]);
-	WriteCard(trump[row][column]);
+	first = InputIndex();
+	WriteCard(trump[first.row][first.column]);
 
 	// 入力２
-	scanf("%s", input);
-	column = ConvertInt(input[0]);
-	row = ConvertInt(input[1]);
-	WriteCard(trump[row][column]);
+	second = InputIndex();
+	WriteCard(trump[second.row][second.column]);
 }
 
 // 文字を数字に変換
@@ -61,4 +58,18 @@ int ConvertInt(char c)
 	}
 
 	return convert;
+}
+
+// 入力されたマスを取得
+Index InputIndex()
+{
+	Index index;
+	char input[3];
+
+	// 入力を変換
+	scanf("%s", input);
+	index.column = ConvertInt(input[0]);
+	index.row = ConvertInt(input[1]);
+	
+	return index;
 }
