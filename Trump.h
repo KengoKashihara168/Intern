@@ -7,6 +7,7 @@
 #define DIAMOND "ダイヤ"
 #define HEART   "ハート"
 #define NUMBER_MAX 13
+#define SUIT_MAX 4
 
 struct Trump
 {
