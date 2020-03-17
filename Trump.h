@@ -6,6 +6,7 @@
 #define CLUB    "クラブ"
 #define DIAMOND "ダイヤ"
 #define HEART   "ハート"
+#define NUMBER_MAX 13
 
 struct Trump
 {
