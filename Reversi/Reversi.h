@@ -8,6 +8,14 @@ enum BoardType
 	White
 };
 
+enum Dir
+{
+	Right,
+	Left,
+	Top,
+	Bottom
+};
+
 #define BOARD_SIZE (8)
 #define NONE  ("Å@")
 #define BLACK ("ÅZ")
