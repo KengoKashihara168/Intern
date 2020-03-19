@@ -138,6 +138,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Concentrate\Concentrate.cpp" />
     <ClCompile Include="Janken\JankenMain.cpp" />
     <ClCompile Include="LeetQuiz\LeetQuizMain.cpp" />
     <ClCompile Include="main.cpp" />
@@ -147,6 +148,7 @@
     <ClCompile Include="Trump.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Concentrate\Concentrate.h" />
     <ClInclude Include="Janken\JankenMain.h" />
     <ClInclude Include="Janken\JankenData.h" />
     <ClInclude Include="LeetQuiz\LeetQuiz.h" />

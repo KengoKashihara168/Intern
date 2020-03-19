@@ -6,6 +6,8 @@
 #define CLUB    "クラブ"
 #define DIAMOND "ダイヤ"
 #define HEART   "ハート"
+#define NUMBER_MAX 13
+#define SUIT_MAX 4
 
 struct Trump
 {
@@ -16,3 +18,5 @@ typedef struct Trump Trump;
 
 // ランダムでトランプを取得
 Trump GetTrump();
+// カードを表示
+void WriteCard(Trump card);
