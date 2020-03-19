@@ -5,6 +5,7 @@
 #include"LeetQuiz/LeetQuizMain.h"
 #include"Poker/Poker.h"
 #include"Concentrate/Concentrate.h"
+#include"Reversi/Reversi.h"
 
 int main()
 {
@@ -12,7 +13,8 @@ int main()
 	//SoloShiritoriMain();
 	//LeetQuizMain();
 	//PokerMain();
-	ConcentrateMain();
+	//ConcentrateMain();
+	ReversiMain();
 
 	return 0;
 }

@@ -49,6 +49,12 @@
     <Filter Include="ヘッダー ファイル\Concentrate">
       <UniqueIdentifier>{d7db41f4-f186-4d17-8578-4cce9e2db3be}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Reversi">
+      <UniqueIdentifier>{5c2555b3-6323-43f7-9de9-32f5244af784}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Reversi">
+      <UniqueIdentifier>{1e8f2a6f-69b2-4cc5-830d-a1e72c3c9f9f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -74,6 +80,9 @@
     </ClCompile>
     <ClCompile Include="Concentrate\Concentrate.cpp">
       <Filter>ソース ファイル\Concentrate</Filter>
+    </ClCompile>
+    <ClCompile Include="Reversi\Reversi.cpp">
+      <Filter>ソース ファイル\Reversi</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -109,6 +118,9 @@
     </ClInclude>
     <ClInclude Include="Concentrate\Concentrate.h">
       <Filter>ヘッダー ファイル\Concentrate</Filter>
+    </ClInclude>
+    <ClInclude Include="Reversi\Reversi.h">
+      <Filter>ヘッダー ファイル\Reversi</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

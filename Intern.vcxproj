@@ -144,6 +144,7 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Poker\Poker.cpp" />
     <ClCompile Include="Rand.cpp" />
+    <ClCompile Include="Reversi\Reversi.cpp" />
     <ClCompile Include="Shiritori\SoloShiritoriMain.cpp" />
     <ClCompile Include="Trump.cpp" />
   </ItemGroup>
@@ -155,6 +156,7 @@
     <ClInclude Include="LeetQuiz\LeetQuizMain.h" />
     <ClInclude Include="Poker\Poker.h" />
     <ClInclude Include="Rand.h" />
+    <ClInclude Include="Reversi\Reversi.h" />
     <ClInclude Include="Shiritori\SoloShiritori.h" />
     <ClInclude Include="Shiritori\SoloShiritoriMain.h" />
     <ClInclude Include="Trump.h" />
