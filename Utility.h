@@ -5,3 +5,10 @@
 #define FALSE -1
 
 typedef int BOOL;
+
+struct Index
+{
+	int row;	// s
+	int column;	// —ñ
+};
+typedef struct Index Index;
