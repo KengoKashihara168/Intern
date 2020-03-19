@@ -12,19 +12,21 @@ Index InputIndex(char* input);
 int ConvertCtoI(char *list,char c);
 // 入力値を確認
 BOOL IsBoardRange(Index index);
-// 駒を配置
+// 指定された方向へ駒を染める
 void PutChip(Index index,Index dir,BoardType color);
-// 一直線上にある自分の色までの距離を取得
+// 同じ駒までの距離を取得
 int GetDistance(Index from, Index dir,BoardType myType, int distance);
+// 終了判定
+BOOL IsEnd();
 
 BoardType board[BOARD_SIZE][BOARD_SIZE];
 
 void ReversiMain()
 {
 	char input[10];
+	BoardType player;
 	Index index;
 	Index dir;
-	BOOL isPut = FALSE;
 	int i, j;
 
 	// ボードの初期化
@@ -45,28 +47,43 @@ void ReversiMain()
 	// 盤面の表示
 	WriteBoard();
 
-	index.row	 = BOARD_SIZE;
-	index.column = BOARD_SIZE;
-
-	// プレイヤーの入力
-	while (IsBoardRange(index) != TRUE)
+	player = Black;
+	while (IsEnd() != TRUE)
 	{
-		printf("A～H,1～8を入力してください\n");
-		scanf("%s", input);
-		index = InputIndex(input);
-	}
-
-	for (i = -1; i < 3; i++)
-	{
-		for (j = -1; j < 3; j++)
+		index.row = BOARD_SIZE;
+		index.column = BOARD_SIZE;
+		// プレイヤーの入力
+		while (IsBoardRange(index) != TRUE)
 		{
-			dir.row = i;
-			dir.column = j;
-			PutChip(index, dir, Black);
+			printf("A～H,1～8を入力してください\n");
+			scanf("%s", input);
+			index = InputIndex(input);
+		}
+
+		// 駒を配置する
+		for (i = -1; i < DIR_RANGE; i++)
+		{
+			for (j = -1; j < DIR_RANGE; j++)
+			{
+				dir.row = i;
+				dir.column = j;
+				PutChip(index, dir, player);
+			}
+		}
+
+		// 盤面の表示
+		WriteBoard();
+
+		// プレイヤーの切り替え
+		if (player == Black)
+		{
+			player = White;
+		}
+		else
+		{
+			player = Black;
 		}
 	}
-
-	WriteBoard();
 }
 
 // 盤面の表示
@@ -151,23 +168,28 @@ BOOL IsBoardRange(Index index)
 	return TRUE;
 }
 
-// 駒を配置
+// 指定された方向へ駒を染める
 void PutChip(Index index,Index dir, BoardType color)
 {
-	int distance;
+	int distance; // 一直線上の駒までの距離
+	Index next;
 	int i;
 
+	// 相手の駒を挟めていたら
 	distance = GetDistance(index, dir, color, 0);
 	if (distance > 0)
 	{
 		board[index.row][index.column] = color;
 		for (i = 0; i <= distance; i++)
 		{
-			board[index.row + dir.row][index.column + dir.column] = color;
+			next.row = index.row + dir.row * i;
+			next.column = index.column + dir.column * i;
+			board[next.row][next.column] = color;
 		}
 	}
 }
 
+// 同じ駒までの距離を取得
 int GetDistance(Index from, Index dir, BoardType myType, int distance)
 {
 	BoardType current;	// 現在のマス
@@ -188,4 +210,21 @@ int GetDistance(Index from, Index dir, BoardType myType, int distance)
 	if (next == None) return 0;
 	
 	return GetDistance(nextIndex, dir,myType, distance + 1);
+}
+
+// 終了判定
+BOOL IsEnd()
+{
+	int i, j;
+	for (i = 0; i < BOARD_SIZE; i++)
+	{
+		for (j = 0; j < BOARD_SIZE; j++)
+		{
+			if (board[i][j] == None)
+			{
+				return FALSE;
+			}
+		}
+	}
+	return TRUE;
 }

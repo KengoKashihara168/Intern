@@ -20,6 +20,7 @@ enum Dir
 #define NONE  ("Å@")
 #define BLACK ("ÅZ")
 #define WHITE ("Åú")
+#define DIR_RANGE (2)
 
 
 /*----------ä÷êî----------*/
